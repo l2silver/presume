@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   s.add_dependency "docx"
   s.add_dependency "ruby-stemmer"
 
-  s.homepage    =
-    'http://rubygems.org/gems/presume'
+  s.homepage    = "https://github.com/l2silver/"
   s.license       = 'MIT'
 end

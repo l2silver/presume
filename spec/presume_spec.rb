@@ -57,16 +57,16 @@ describe Presume do
       presume.instance_variable_get("@matched_searchables")
     end
 
-  	it "should find similar searchable and time" do
-    	expect(presume.searchables?(searchable_params).class.name).to eq("Array") 
+  	it "should find similar positions and times" do
+    	expect(presume.searchables?(searchable_params).class.name).to eq("Hash")
       expect(presume.instance_variable_get("@matched_searchables").length).to eq(1)
-      expect(presume.instance_variable_get("@matched_searchables")[0][0].raw_name).to eq("Project Coordinator")
+      expect(presume.instance_variable_get("@matched_searchables")["Project Coordinator"][0].text).to eq("Project Coordinator September 2012 – January 2014, The Rose and Thistle Group Ltd. (Toronto, Canada)")
     end
 
   	it "should find similar skills and times" do
-      expect(presume.skills?(skill_params).class.name).to eq("Array")
+      expect(presume.skills?(skill_params).class.name).to eq("Hash")
       expect(presume.instance_variable_get("@matched_searchables").length).to eq(1)
-      expect(presume.instance_variable_get("@matched_searchables")[0][1].text).to eq("Assisted in the financial reporting, pro forma analysis, and presentation of investment proposals to International stakeholders, leasing agents and project managers in Cantonese, Mandarin and English using Excel and Power,Point. ")
+      expect(presume.instance_variable_get("@matched_searchables")["present investment proposals"][0].text).to eq("Assisted in the financial reporting, pro forma analysis, and presentation of investment proposals to International stakeholders, leasing agents and project managers in Cantonese, Mandarin and English using Excel and Power,Point. ")
   	end
 
 end

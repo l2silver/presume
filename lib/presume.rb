@@ -5,13 +5,13 @@ require 'date'
 require "definitions/regex.rb"
 require "definitions/classifications.rb"
 require "definitions/machines.rb"
-require "sort/resume_builder.rb"
-require "sort/resume_classifier.rb"
-require "sort/classifide.rb"
-require "sort/header.rb"
-require "sort/bullet.rb"
-require "sort/searchable.rb"
-require "sort/searchables.rb"
+require "classes/resume_builder.rb"
+require "classes/resume_classifier.rb"
+require "classes/classifide.rb"
+require "classes/header.rb"
+require "classes/bullet.rb"
+require "classes/searchable.rb"
+require "classes/searchables.rb"
 
 class Presume
 
@@ -87,7 +87,7 @@ class Presume
         end
 
         def reset_matched_searchables
-          @matched_searchables = []
+          @matched_searchables = {}
         end
 
       def check_for_searchable_match
@@ -117,7 +117,11 @@ class Presume
         end
 
         def add_to_matched_searchables(classifide, searchable)
-          @matched_searchables += [[searchable,classifide]]
+          if @matched_searchables[searchable.raw_name].nil?
+            @matched_searchables[searchable.raw_name] = [classifide]
+          else
+            @matched_searchables[searchable.raw_name] += [classifide]
+          end
         end
 end
 
