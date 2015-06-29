@@ -1,0 +1,16 @@
+Gem::Specification.new do |s|
+  s.name        = 'parse_resume'
+  s.version     = '0.0.1'
+  s.date        = '2015-06-21'
+  s.summary     = "A powerful resume parsing gem"
+  s.description = "A simple hello world gem"
+  s.authors     = ["Leigh Silverstein"]
+  s.email       = 'l2silver@ryerson.ca'
+  s.files       = ["lib/parse_resume.rb","lib/something/somethingelse.rb"]
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'rspec'
+
+  s.homepage    =
+    'http://rubygems.org/gems/parse_resume'
+  s.license       = 'MIT'
+end
