@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "Presume is the only open-source Applicant Tracking System technology for Ruby-on-Rails developers. It works for parsing resumes into the CVSTOM.org resume format, Section >> Header >> Bullets. It then takes an intake of skills or positions, and the minimum experience duration for each skill and position"
   s.authors     = ["Leigh Silverstein"]
   s.email       = 'lsilversteinto@gmail.com'
-  s.files = Dir['Gemfile', 'Rakefile', 'sample_resume.docx', 'README.md', 'LICENSE', 'lib/**/*', 'spec/*']
+  s.files = Dir['Gemfile', 'Rakefile', 'sample_resume.docx', 'README.Rdoc', 'LICENSE', 'lib/**/*', 'spec/*']
   
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec'
