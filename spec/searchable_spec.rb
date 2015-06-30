@@ -3,8 +3,10 @@ require 'spec_helper'
 describe Searchable do
 
 	searchable_params = {raw_name: "marketing coordinator", duration: 1}
+	searchable_params_2 = {raw_name: "marketing coordinator,marketing assistant", duration: 1}
 	let(:searchables) {Searchables.new({"marketing coordinator" => 1})}
 	let(:searchable){Searchable.new(searchable_params)}
+	let(:searchable_2){Searchable.new(searchable_params_2)}
 	
 	it "takes hash input" do
 		searchables.all
@@ -27,6 +29,11 @@ describe Searchable do
 	it "checks regexes" do
 		expect(searchable.check_regex("marketing coordinator")).to be_truthy
 		expect(searchable.check_regex("marketing possey")).to be_falsy
+	end
+
+	it "separates synonyms" do
+		expect(searchable_2.separate_synonyms.class.name).to eq("Array")
+		expect(searchable.separate_synonyms.class.name).to eq("Array")
 	end
 
 

@@ -66,12 +66,12 @@ Checks resumes for specific skills, positions, and their duration
     # After parsing a resume
 
     # Checking for certain position or education ("name", expected_minimum_duration_in_years)
-    intake_hash = {"Project Coordinator|Project Assistant" => 1, "Bachelors Finance|BF|B.F." => 4}
+    intake_hash = {"Project Coordinator,Project Assistant" => 1, "Bachelors Finance|BF|B.F." => 4}
 
     # Check for positions
     presume.positions?(intake_hash)
     
-    #=> {"Project Coordinator|Project Assistant" => [ MatchedHeaderObject1 ], "Bachelors Finance|BF|B.F." => [ MatchedHeaderObject2 ]}
+    #=> {"Project Coordinator,Project Assistant" => [ MatchedHeaderObject1 ], "Bachelors Finance|BF|B.F." => [ MatchedHeaderObject2 ]}
 
     # Checking for certain skills ("name", expected_minimum_duration_in_years)
     intake_hash = {"database management" => 1, "clear communication" => 0}
