@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'presume'
-  s.version     = '0.0.3'
+  s.version     = '0.0.4'
   s.date        = '2015-06-21'
   s.summary     = "A simple resume parsing gem with applicant tracking system technology"
   s.description = "Presume is the only open-source Applicant Tracking System technology for Ruby-on-Rails developers. It works for parsing resumes into the CVSTOM.org resume format, Section >> Header >> Bullets. It then takes an intake of skills or positions, and the minimum experience duration for each skill and position"
